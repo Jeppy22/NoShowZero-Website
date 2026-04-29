@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0B1120;
+  --navy-surface: #0d1728;
+  --navy-border: #1a2d47;
+  --teal: #00E5C0;
+  --teal-hover: #00C2A8;
+  --text-primary: #FFFFFF;
+  --text-muted: #8BA4BE;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--text-primary);
+  font-family: var(--font-jakarta), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Teal glow utilities ──────────────────────────────── */
+.glow-teal {
+  box-shadow: 0 0 40px rgba(0, 229, 192, 0.18);
+}
+
+.glow-teal-sm {
+  box-shadow: 0 0 20px rgba(0, 229, 192, 0.10);
+}
+
+/* ── Gradient text ────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #00E5C0, #00FFC8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtle grid background ───────────────────────────── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(0, 229, 192, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 192, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Hero entrance ────────────────────────────────────── */
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.65s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Floating particles ───────────────────────────────── */
+@keyframes floatUp {
+  0%   { opacity: 0;   transform: translateY(0)     scale(0.5); }
+  10%  { opacity: 0.35; }
+  90%  { opacity: 0.2; }
+  100% { opacity: 0;   transform: translateY(-90vh) scale(1.2); }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #00E5C0;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+}
+
+/* ── Glassmorphism card ───────────────────────────────── */
+.glass-card {
+  background: rgba(13, 23, 40, 0.60);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 192, 0.12);
+}
+
+/* ── Pricing animated glow ────────────────────────────── */
+@keyframes pricingPulse {
+  0%, 100% {
+    box-shadow: 0 0 24px rgba(0, 229, 192, 0.20), 0 0 60px rgba(0, 229, 192, 0.07);
+  }
+  50% {
+    box-shadow: 0 0 48px rgba(0, 229, 192, 0.50), 0 0 100px rgba(0, 229, 192, 0.18);
+  }
+}
+
+.pricing-glow {
+  animation: pricingPulse 3s ease-in-out infinite;
+}
+
+/* ── Animation delay helpers ──────────────────────────── */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── FAQ accordion (CSS grid trick) ──────────────────── */
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.faq-body.open {
+  grid-template-rows: 1fr;
+}
+.faq-body > div {
+  overflow: hidden;
+}
+
+/* ── Custom scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--navy); }
+::-webkit-scrollbar-thumb  { background: var(--navy-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal); }
+
+/* ── Range slider accent ──────────────────────────────── */
+input[type="range"] {
+  accent-color: var(--teal);
+}
