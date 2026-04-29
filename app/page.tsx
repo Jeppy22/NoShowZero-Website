@@ -315,6 +315,15 @@ function EmailMockup() {
   );
 }
 
+// ─── PILOT BANNER ─────────────────────────────────────────────────────────────
+function PilotBanner() {
+  return (
+    <div className="w-full bg-teal text-navy text-center text-sm font-body font-bold py-2.5 px-4 z-[60] relative">
+      🟢 1 Free Pilot Spot Available — First Practice to Book Gets the First Month Free
+    </div>
+  );
+}
+
 // ─── 1. NAVBAR ────────────────────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -348,7 +357,7 @@ function Navbar() {
           href="#book-demo"
           className="bg-teal text-navy font-body font-bold text-sm px-5 py-2.5 rounded-full hover:bg-teal-hover transition-all hover:scale-[1.02]"
         >
-          Book a Free Demo
+          Claim Free Pilot Spot
         </a>
       </div>
     </nav>
@@ -399,7 +408,7 @@ function Hero() {
                 href="#book-demo"
                 className="bg-teal text-navy font-body font-bold text-lg px-8 py-4 rounded-full hover:bg-teal-hover transition-all hover:scale-[1.02] glow-teal text-center"
               >
-                Book a Free Demo
+                Claim Free Pilot Spot
               </a>
               <a
                 href="#how-it-works"
@@ -839,7 +848,7 @@ function Features() {
 // ─── 7. PILOT PROGRAM ─────────────────────────────────────────────────────────
 function PilotProgram() {
   const stats = [
-    { value: "5", label: "Founding practices accepted" },
+    { value: "1", label: "Free pilot spot remaining" },
     { value: "$0", label: "Risk — cancel anytime" },
     { value: "48 hrs", label: "From contract to live system" },
   ];
@@ -881,10 +890,10 @@ function PilotProgram() {
             href="#book-demo"
             className="inline-block bg-teal text-navy font-body font-bold text-lg px-10 py-4 rounded-full hover:bg-teal-hover transition-all hover:scale-[1.02] glow-teal"
           >
-            Claim Your Founding Spot
+            Claim the Free Pilot Spot
           </a>
           <p className="text-text-muted text-sm mt-4">
-            Only 5 spots available. 2 already claimed.
+            Free spot is first-come, first-served.
           </p>
         </Reveal>
       </div>
@@ -1077,7 +1086,7 @@ function FinalCTA() {
         <Reveal delay={60}>
           <div className="inline-flex items-center gap-2 border border-teal/30 bg-teal/10 text-teal text-sm px-5 py-2.5 rounded-full mb-10">
             <span className="w-2 h-2 bg-teal rounded-full animate-pulse" />
-            Only 5 founding spots · 2 already claimed in Worcester
+            1 free pilot spot left — all others pay after this
           </div>
         </Reveal>
 
@@ -1131,6 +1140,7 @@ function Footer() {
 export default function Home() {
   return (
     <>
+      <PilotBanner />
       <Navbar />
       <Hero />
       <StatsBar />
