@@ -318,7 +318,7 @@ function EmailMockup() {
 // ─── PILOT BANNER ─────────────────────────────────────────────────────────────
 function PilotBanner() {
   return (
-    <div className="w-full bg-teal text-navy text-center text-sm font-body font-bold py-2.5 px-4 z-[60] relative">
+    <div className="fixed top-0 left-0 right-0 bg-teal text-navy text-center text-sm font-body font-bold py-2.5 px-4 z-[60]">
       🟢 1 Free Pilot Spot Available — First Practice to Book Gets the First Month Free
     </div>
   );
@@ -336,7 +336,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-[40px] left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-navy/90 backdrop-blur-md border-b border-navy-border"
           : "bg-transparent"
@@ -367,7 +367,7 @@ function Navbar() {
 // ─── 2. HERO ──────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-grid pt-20 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-grid pt-36 pb-16 overflow-hidden">
       {/* Ambient orb */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-teal/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-1/3 w-[300px] h-[300px] bg-teal/3 rounded-full blur-3xl pointer-events-none" />
